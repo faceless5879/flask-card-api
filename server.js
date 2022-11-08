@@ -3,6 +3,8 @@ const app = express();
 const cors = require("cors");
 const timeout = require("connect-timeout");
 require("dotenv").config();
+const defaultRoutes = require("./Routes/DefaultRoutes");
+const cardRoutes = require("./Routes/Card/CardRoutes");
 
 const PORT = process.env.PORT | 3000;
 app.use(express.json());
@@ -15,6 +17,8 @@ app.use((req, res, next) => {
 });
 
 /** Routing */
+app.use("/", defaultRoutes);
+app.use("/card", cardRoutes);
 
 // Not found handling
 app.use((req, res, next) => {
