@@ -6,7 +6,7 @@ require("dotenv").config();
 const defaultRoutes = require("./Routes/DefaultRoutes");
 const cardRoutes = require("./Routes/Card/CardRoutes");
 
-const PORT = process.env.PORT | 3000;
+const PORT = process.env.PORT | 8080;
 app.use(express.json());
 app.use(timeout("5s"));
 app.use(cors());
